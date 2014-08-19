@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../angular-sticktotop.js"></script>
+    <script src="./liveoffset.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/angular-sticktotop.css"></style>
+    <link type="text/css" rel="stylesheet" href="./liveoffset.css"></style>
+  </head>
+  <body ng-app="stickyApp" ng-controller="StickController">
+    <div id="container" sticky-container>
+      <img src="http://baconmockup.com/800/150" id="top-image">
+      <p>Found these 2 gems <a href="http://baconipsum.com">Bacon Ipsum</a> and <a href="http://baconmockup.com/">Bacon mockup</a></p>
+      <div class="my-stick" sticky-div>Bacon Ipsum:</div>
+
+      <p>Let's assume you are not sure what the size of the next image will be, and have therefore not set it in the CSS. When the below sticky div directive gets created, its offset would be wrong compared to once the image is loaded. So the next sticky div will misbehave</p>
+
+      <img ng-src="http://baconmockup.com/400/{{rand1}}">
+
+      <div class="my-stick" sticky-div>I'm not going to behave well!</div>
+      <p>You can however use the live-offset attribute to read the offset each time the (throttled) scroll event is triggered.</p>
+      <p>So the next sticky div will behave as expected (despite the previous one not working)</p>
+
+      <img ng-src="http://baconmockup.com/400/{{rand2}}">
+
+      <div class="my-stick" sticky-div live-offset>I however will behave as expected thanks to live offset</div>
+
+      <p>Jowl beef ribs ham hock pork belly spare ribs hamburger. Chuck strip steak swine spare ribs, rump ham hock ground round tenderloin meatloaf. Pork belly shankle venison meatball strip steak pork loin boudin beef ribs meatloaf sausage doner. Rump ball tip sausage swine tri-tip venison sirloin. Strip steak ball tip tongue turkey bresaola. Ribeye boudin tongue, bacon beef fatback kielbasa.</p>
+      <p>Hamburger chuck sausage capicola strip steak pork belly. Meatloaf porchetta shank, pork chop pork loin ribeye jowl biltong short ribs hamburger. Boudin t-bone ribeye pork loin drumstick. Turkey short loin t-bone, tail landjaeger sausage beef pork chop pancetta rump bacon brisket frankfurter jerky. Filet mignon meatball rump, corned beef ribeye leberkas ham short ribs cow pork. Rump salami biltong tri-tip, t-bone beef ribs swine capicola andouille ham hock pork chop chicken.</p>
+
+      <p>Ball tip turkey kielbasa filet mignon drumstick doner prosciutto fatback short ribs turducken porchetta swine. Andouille prosciutto ham hock, ham shankle meatball sirloin beef tail. Landjaeger chuck leberkas pastrami. Tri-tip shoulder meatball andouille bresaola meatloaf jerky ribeye beef pork leberkas venison. Strip steak ham shank pastrami biltong turducken ground round chicken sausage flank swine drumstick kielbasa tongue.</p>
+
+      <p>Pork loin chicken pork chop jowl brisket bacon tail pancetta kielbasa meatloaf frankfurter shoulder drumstick swine tri-tip. Kielbasa hamburger short loin prosciutto kevin t-bone. Tail boudin pork chop, swine ham turducken ribeye brisket turkey. Salami brisket pork belly, cow biltong spare ribs ground round andouille jowl pig shoulder bresaola prosciutto rump. Pork doner ribeye turkey sirloin. Meatball boudin fatback hamburger.</p>
+
+      <p>Jowl beef ribs ham hock pork belly spare ribs hamburger. Chuck strip steak swine spare ribs, rump ham hock ground round tenderloin meatloaf. Pork belly shankle venison meatball strip steak pork loin boudin beef ribs meatloaf sausage doner. Rump ball tip sausage swine tri-tip venison sirloin. Strip steak ball tip tongue turkey bresaola. Ribeye boudin tongue, bacon beef fatback kielbasa.</p><p>Jowl beef ribs ham hock pork belly spare ribs hamburger. Chuck strip steak swine spare ribs, rump ham hock ground round tenderloin meatloaf. Pork belly shankle venison meatball strip steak pork loin boudin beef ribs meatloaf sausage doner. Rump ball tip sausage swine tri-tip venison sirloin. Strip steak ball tip tongue turkey bresaola. Ribeye boudin tongue, bacon beef fatback kielbasa.</p>
+      <p>Hamburger chuck sausage capicola strip steak pork belly. Meatloaf porchetta shank, pork chop pork loin ribeye jowl biltong short ribs hamburger. Boudin t-bone ribeye pork loin drumstick. Turkey short loin t-bone, tail landjaeger sausage beef pork chop pancetta rump bacon brisket frankfurter jerky. Filet mignon meatball rump, corned beef ribeye leberkas ham short ribs cow pork. Rump salami biltong tri-tip, t-bone beef ribs swine capicola andouille ham hock pork chop chicken.</p>
+
+      <p>Ball tip turkey kielbasa filet mignon drumstick doner prosciutto fatback short ribs turducken porchetta swine. Andouille prosciutto ham hock, ham shankle meatball sirloin beef tail. Landjaeger chuck leberkas pastrami. Tri-tip shoulder meatball andouille bresaola meatloaf jerky ribeye beef pork leberkas venison. Strip steak ham shank pastrami biltong turducken ground round chicken sausage flank swine drumstick kielbasa tongue.</p>
+
+      <p>Pork loin chicken pork chop jowl brisket bacon tail pancetta kielbasa meatloaf frankfurter shoulder drumstick swine tri-tip. Kielbasa hamburger short loin prosciutto kevin t-bone. Tail boudin pork chop, swine ham turducken ribeye brisket turkey. Salami brisket pork belly, cow biltong spare ribs ground round andouille jowl pig shoulder bresaola prosciutto rump. Pork doner ribeye turkey sirloin. Meatball boudin fatback hamburger.</p>
+
+      <p>Jowl beef ribs ham hock pork belly spare ribs hamburger. Chuck strip steak swine spare ribs, rump ham hock ground round tenderloin meatloaf. Pork belly shankle venison meatball strip steak pork loin boudin beef ribs meatloaf sausage doner. Rump ball tip sausage swine tri-tip venison sirloin. Strip steak ball tip tongue turkey bresaola. Ribeye boudin tongue, bacon beef fatback kielbasa.</p>
+    </div>
+  </body>
+</html>
