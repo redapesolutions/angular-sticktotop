@@ -1,0 +1,22 @@
+.out-of-view {
+  visibility: hidden;
+}
+
+.sticky-div-copy {
+  display: none;
+  position: fixed;
+  top: 0px;
+}
+
+.sticky-div-original {
+  position: relative;
+}
+
+.sticky-div-copy.out-of-view {
+  visibility: visible;
+  display: block;
+}
+
+[sticky-container] {
+  overflow-y: scroll;
+}
