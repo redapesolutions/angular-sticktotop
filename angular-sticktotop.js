@@ -79,27 +79,31 @@
         element.addClass('sticky-div-original');
         // Add it to the DOM
         element.after(elementCopy);
+
+        // Prepare some things that don't need the scope
+        // Add an offset at which the div should move
+        var extra = attributes.stickyOffset ? $parse(attributes.stickyOffset) : angular.bind(angular, angular.identity, 0);
+        // If we pass a function on fix and on unfix, create a new scope
+        var onStick = angular.identity, onUnstick = angular.identity;
+        if(attributes.onStick){
+          onStick = $parse(attributes.onStick);
+        }
+        if(attributes.onUnstick){
+          onUnstick = $parse(attributes.onUnstick);
+        }
         return function postLink(scope, element, attributes, controller){
-          // If we pass a function on fix and on unfix, create a new scope
-          var onStick = angular.identity, onUnstick = angular.identity;
-          if(attributes.onStick){
-            onStick = $parse(attributes.onStick);
-          }
-          if(attributes.onUnstick){
-            onUnstick = $parse(attributes.onUnstick);
-          }
-          // Let's assume that padding won't change at least?
-          var parentPaddingTop = parseInt(window.getComputedStyle(controller.parentElement[0]).paddingTop, 10);
+        // Let's assume that padding won't change at least?
+        var parentPaddingTop = parseInt(window.getComputedStyle(controller.parentElement[0]).paddingTop, 10);
           // If live offset is on, we expect the boxes tohave changed size/position
           // This is slightly resource heavier but needed if things are not in place when directive is created
           if(angular.isDefined(attributes.liveOffset)) {
             var initialOffset = function readPosition() {
-              return element[0].offsetTop - (controller.parentElement[0].offsetTop + parentPaddingTop);
+              return element[0].offsetTop - (controller.parentElement[0].offsetTop + parentPaddingTop + extra());
             }; 
           } else {
             //  read top position from top parent if live offset isn't on
             // Make it a function  for consistency but basically return a value
-            var initialOffset = angular.bind(angular, angular.identity, element[0].offsetTop - (controller.parentElement[0].offsetTop + parentPaddingTop));
+            var initialOffset = angular.bind(angular, angular.identity, element[0].offsetTop - (controller.parentElement[0].offsetTop + parentPaddingTop + extra(scope)));
           }
           var clearTrigger = controller.addTrigger(function(scroll, event, parentElement) {
             var hasIt = elementCopy.hasClass(outOfViewClass);
@@ -116,7 +120,7 @@
             }
             // Do we care about change of state?
             if(stateChange && (onStick || onUnstick)) {
-              (stateChange === 'removed' ? onUnstick : onStick)(scope);
+              scope.$apply(angular.bind(scope, (stateChange === 'removed' ? onUnstick : onStick), scope));
             }
           });
 
