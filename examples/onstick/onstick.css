@@ -1,0 +1,28 @@
+#container {
+  height: 100%;
+  font-family: Arial;
+  width: 800px;
+  line-height: 1.4em;
+  font-size: 0.9em;
+  margin: auto;
+}
+
+#top-image {
+  height: 150px;
+}
+
+.my-stick {
+  background: white;
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  z-index: 9000;
+}
+
+.my-stick.out-of-view {
+  z-index: 8999;
+}
+
+.stuck {
+  color: red;
+}

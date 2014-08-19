@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../angular-sticktotop.js"></script>
+    <script src="./onstick.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/angular-sticktotop.css"></style>
+    <link type="text/css" rel="stylesheet" href="./onstick.css"></style>
+  </head>
+  <body ng-app="stickyApp" ng-controller="StickyController">
+    <div id="container" sticky-container>
+      <img src="http://baconmockup.com/800/150" id="top-image">
+      <p>Found these 2 gems <a href="http://baconipsum.com">Bacon Ipsum</a> and <a href="http://baconmockup.com/">Bacon mockup</a></p>
+      <div class="my-stick" sticky-div ng-class="{'stuck': stuck}" on-stick="makeRed()" on-unstick="makeBlack()">Bacon Ipsum:</div>
+
+      <p>This example shows the use of an expression that is triggered when a sticky div becomes stuck or unstuck. Though of course, the red color effect could be achieved simply via the out-of-view CSS class.</p>
+
+      <p>Ball tip turkey kielbasa filet mignon drumstick doner prosciutto fatback short ribs turducken porchetta swine. Andouille prosciutto ham hock, ham shankle meatball sirloin beef tail. Landjaeger chuck leberkas pastrami. Tri-tip shoulder meatball andouille bresaola meatloaf jerky ribeye beef pork leberkas venison. Strip steak ham shank pastrami biltong turducken ground round chicken sausage flank swine drumstick kielbasa tongue.</p>
+
+      <p>Pork loin chicken pork chop jowl brisket bacon tail pancetta kielbasa meatloaf frankfurter shoulder drumstick swine tri-tip. Kielbasa hamburger short loin prosciutto kevin t-bone. Tail boudin pork chop, swine ham turducken ribeye brisket turkey. Salami brisket pork belly, cow biltong spare ribs ground round andouille jowl pig shoulder bresaola prosciutto rump. Pork doner ribeye turkey sirloin. Meatball boudin fatback hamburger.</p>
+
+      <p>Hamburger chuck sausage capicola strip steak pork belly. Meatloaf porchetta shank, pork chop pork loin ribeye jowl biltong short ribs hamburger. Boudin t-bone ribeye pork loin drumstick. Turkey short loin t-bone, tail landjaeger sausage beef pork chop pancetta rump bacon brisket frankfurter jerky. Filet mignon meatball rump, corned beef ribeye leberkas ham short ribs cow pork. Rump salami biltong tri-tip, t-bone beef ribs swine capicola andouille ham hock pork chop chicken.</p>
+
+      <p>Ball tip turkey kielbasa filet mignon drumstick doner prosciutto fatback short ribs turducken porchetta swine. Andouille prosciutto ham hock, ham shankle meatball sirloin beef tail. Landjaeger chuck leberkas pastrami. Tri-tip shoulder meatball andouille bresaola meatloaf jerky ribeye beef pork leberkas venison. Strip steak ham shank pastrami biltong turducken ground round chicken sausage flank swine drumstick kielbasa tongue.</p>
+
+      <p>Pork loin chicken pork chop jowl brisket bacon tail pancetta kielbasa meatloaf frankfurter shoulder drumstick swine tri-tip. Kielbasa hamburger short loin prosciutto kevin t-bone. Tail boudin pork chop, swine ham turducken ribeye brisket turkey. Salami brisket pork belly, cow biltong spare ribs ground round andouille jowl pig shoulder bresaola prosciutto rump. Pork doner ribeye turkey sirloin. Meatball boudin fatback hamburger.</p>
+
+      <p>Jowl beef ribs ham hock pork belly spare ribs hamburger. Chuck strip steak swine spare ribs, rump ham hock ground round tenderloin meatloaf. Pork belly shankle venison meatball strip steak pork loin boudin beef ribs meatloaf sausage doner. Rump ball tip sausage swine tri-tip venison sirloin. Strip steak ball tip tongue turkey bresaola. Ribeye boudin tongue, bacon beef fatback kielbasa.</p>
+      <p>Pork loin chicken pork chop jowl brisket bacon tail pancetta kielbasa meatloaf frankfurter shoulder drumstick swine tri-tip. Kielbasa hamburger short loin prosciutto kevin t-bone. Tail boudin pork chop, swine ham turducken ribeye brisket turkey. Salami brisket pork belly, cow biltong spare ribs ground round andouille jowl pig shoulder bresaola prosciutto rump. Pork doner ribeye turkey sirloin. Meatball boudin fatback hamburger.</p>
+
+      <p>Hamburger chuck sausage capicola strip steak pork belly. Meatloaf porchetta shank, pork chop pork loin ribeye jowl biltong short ribs hamburger. Boudin t-bone ribeye pork loin drumstick. Turkey short loin t-bone, tail landjaeger sausage beef pork chop pancetta rump bacon brisket frankfurter jerky. Filet mignon meatball rump, corned beef ribeye leberkas ham short ribs cow pork. Rump salami biltong tri-tip, t-bone beef ribs swine capicola andouille ham hock pork chop chicken.</p>
+
+      <p>Ball tip turkey kielbasa filet mignon drumstick doner prosciutto fatback short ribs turducken porchetta swine. Andouille prosciutto ham hock, ham shankle meatball sirloin beef tail. Landjaeger chuck leberkas pastrami. Tri-tip shoulder meatball andouille bresaola meatloaf jerky ribeye beef pork leberkas venison. Strip steak ham shank pastrami biltong turducken ground round chicken sausage flank swine drumstick kielbasa tongue.</p>
+
+      <p>Pork loin chicken pork chop jowl brisket bacon tail pancetta kielbasa meatloaf frankfurter shoulder drumstick swine tri-tip. Kielbasa hamburger short loin prosciutto kevin t-bone. Tail boudin pork chop, swine ham turducken ribeye brisket turkey. Salami brisket pork belly, cow biltong spare ribs ground round andouille jowl pig shoulder bresaola prosciutto rump. Pork doner ribeye turkey sirloin. Meatball boudin fatback hamburger.</p>
+
+      <p>Jowl beef ribs ham hock pork belly spare ribs hamburger. Chuck strip steak swine spare ribs, rump ham hock ground round tenderloin meatloaf. Pork belly shankle venison meatball strip steak pork loin boudin beef ribs meatloaf sausage doner. Rump ball tip sausage swine tri-tip venison sirloin. Strip steak ball tip tongue turkey bresaola. Ribeye boudin tongue, bacon beef fatback kielbasa.</p>
+    </div>
+  </body>
+</html>
