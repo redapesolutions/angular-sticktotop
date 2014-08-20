@@ -86,13 +86,9 @@
         // Add an offset at which the div should move
         var extra = attributes.stickyOffset ? $parse(attributes.stickyOffset) : angular.bind(angular, angular.identity, 0);
         // If we pass a function on fix and on unfix, create a new scope
-        var onStick = angular.identity, onUnstick = angular.identity;
-        if(attributes.onStick){
-          onStick = $parse(attributes.onStick);
-        }
-        if(attributes.onUnstick){
-          onUnstick = $parse(attributes.onUnstick);
-        }
+        var onStick = $parse(attributes.onStick);
+        var onUnstick = $parse(attributes.onUnstick);
+
         return function postLink(scope, element, attributes, controller){
           // Keep track of index of this particular sticky div
           var index = controller.getIndex();
