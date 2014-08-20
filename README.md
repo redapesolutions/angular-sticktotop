@@ -69,14 +69,14 @@ Run a http server at the root directory e.g.
 ```
 and view examples/......./index.html
 
-## <sticky-container>
+## sticky-container
 This is the scrollable reference element.
 ### Options
 All options are available as attributes of the directive
 
 - *scrollPeriod*: Number of milliseconds for throttling of scroll event. Defaults to 50ms.
 
-## <sticky-div>
+## sticky-div
 This directive requires the sticky container directive as one of its parens. The elements whose position is watched and compared to the current scroll value.
 ### Original and copy
 The directive creates a copy of the original element and inserts it into the DOM just after the original element. The original element receives a CSS class 'sticky-div-original' and the copy receives the class 'sticky-div-copy'.
