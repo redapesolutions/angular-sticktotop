@@ -1,8 +1,6 @@
 (function() {
   var module = angular.module('ra.sticktotop', ['ng']);
 
-
-
   module.directive('stickyContainer', function($log) {
     // If lodash is available, it probably is more efficient than our throttle
     try {
@@ -31,6 +29,10 @@
         this.parentElement = $element;
         var period = parseInt($attrs.scrollPeriod, 10) || 50;
         var triggers = [];
+        // Utility function used for keeping track of the index of the sub directive within its parent
+        this.getIndex = function() {
+          return triggers.length;
+        };
         this.addTrigger = function(fn) {
           triggers.push(fn);
           return function clearTrigger() {
@@ -92,6 +94,8 @@
           onUnstick = $parse(attributes.onUnstick);
         }
         return function postLink(scope, element, attributes, controller){
+          // Keep track of index of this particular sticky div
+          var index = controller.getIndex();
         // Let's assume that padding won't change at least?
         var parentPaddingTop = parseInt(window.getComputedStyle(controller.parentElement[0]).paddingTop, 10);
           // If live offset is on, we expect the boxes tohave changed size/position
@@ -120,7 +124,7 @@
             }
             // Do we care about change of state?
             if(stateChange && (onStick || onUnstick)) {
-              scope.$apply(angular.bind(scope, (stateChange === 'removed' ? onUnstick : onStick), scope));
+              scope.$apply(angular.bind(scope, (stateChange === 'removed' ? onUnstick : onStick), scope, {$index: index, $scrollPosition: scroll, $event: event}));
             }
           });
 
