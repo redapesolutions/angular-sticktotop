@@ -8,7 +8,7 @@
   </head>
   <body ng-app="stickyApp" ng-controller="StickyController">
     <div id="container" sticky-container>
-      <img src="http://baconmockup.com/800/150" id="top-image">
+      <img src="http://baconmockup.com/800/150" height="150" width="800" id="top-image">
       <p>Found these 2 gems <a href="http://baconipsum.com">Bacon Ipsum</a> and <a href="http://baconmockup.com/">Bacon mockup</a></p>
       <div class="my-stick" sticky-div ng-class="{'stuck': stuck0}" on-stick="makeRed($index, $scrollPosition)" on-unstick="makeBlack($index)">Bacon Ipsum:</div>
 
