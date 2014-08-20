@@ -5,11 +5,10 @@ Uses Angular expressions to trigger on stick and on unstick callbacks.
 
 ## Features
 
-- Make one or more divs stick to top when scrolling down causes them to exit the view
-- CSS focused
 - Container directive and sticky div directive allow for several scrollable areas to be controlled
-- Read position on DOM ready or live (for unknown height content)
-- Position offset at which div is considered stuck
+- CSS focused
+- Read position either on directive creation or live (for unknown height content)
+- Position offset at which div is considered "out"
 - onStick and onUnstick scope bindings with optional $index, $scrollPosition and $event available in the expression
 
 ## Sample usage
