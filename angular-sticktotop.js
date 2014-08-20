@@ -58,7 +58,7 @@
           });
         }, period);
         $element.on('scroll', trigger);
-        // Avoid memore leaks
+        // Avoid memory leaks
         $element.on('$destroy', function() {
           $element.off('scroll', trigger);
         });
@@ -92,8 +92,9 @@
         return function postLink(scope, element, attributes, controller){
           // Keep track of index of this particular sticky div
           var index = controller.getIndex();
-        // Let's assume that padding won't change at least?
-        var parentPaddingTop = parseInt(window.getComputedStyle(controller.parentElement[0]).paddingTop, 10);
+          // Let's assume that padding won't change at least?
+          var parentPaddingTop = parseInt(window.getComputedStyle(controller.parentElement[0]).paddingTop, 10);
+          
           // If live offset is on, we expect the boxes tohave changed size/position
           // This is slightly resource heavier but needed if things are not in place when directive is created
           if(angular.isDefined(attributes.liveOffset)) {
@@ -101,10 +102,11 @@
               return element[0].offsetTop - (controller.parentElement[0].offsetTop + parentPaddingTop + extra());
             }; 
           } else {
-            //  read top position from top parent if live offset isn't on
+            // Read top position from top parent if live offset isn't on
             // Make it a function  for consistency but basically return a value
             var initialOffset = angular.bind(angular, angular.identity, element[0].offsetTop - (controller.parentElement[0].offsetTop + parentPaddingTop + extra(scope)));
           }
+
           var clearTrigger = controller.addTrigger(function(scroll, event, parentElement) {
             var hasIt = elementCopy.hasClass(outOfViewClass);
             var isOut = scroll >= initialOffset();
