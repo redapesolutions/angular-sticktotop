@@ -53,9 +53,7 @@ CSS (available in angular-sticktotop.css):
 
 ## Install
 
-```
-  bower install angular-sticktotop
-```
+Add `angular-sticktotop.js` to your html
 
 ## Dependencies
 None, although if lodash is available (as window._), it will be used for the throttling of the scroll event
