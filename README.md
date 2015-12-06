@@ -1,3 +1,7 @@
+# Note
+This project is not maintained anymore. For a similar solution in Angular, check out Angular Material's subheader:
+https://material.angularjs.org/latest/demo/subheader
+
 # Stick to top directive
 Angular directive that allows divs to stay at the top of their container when scrolling down.
 Allows for several containers, each having one or more sticky divs.
